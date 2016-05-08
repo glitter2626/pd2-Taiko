@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/ppp">
+        <file>soul1.png</file>
+        <file>soul2.png</file>
+        <file>soul3.png</file>
+        <file>soul4.png</file>
+    </qresource>
+</RCC>
