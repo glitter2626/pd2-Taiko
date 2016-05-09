@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QMediaPlayer>
 
 namespace Ui {
 class Widget;
@@ -30,7 +31,7 @@ private:
     void keyPressEvent(QKeyEvent*);
     void timerEvent(QTimerEvent*);
     int i, score, bonus;
-
+    QMediaPlayer* a;
 };
 
 #endif // WIDGET_H

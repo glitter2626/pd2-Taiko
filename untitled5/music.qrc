@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Nevereverland.mp3</file>
+        <file>mu.qrc</file>
+    </qresource>
+</RCC>

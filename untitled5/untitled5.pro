@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,4 +26,5 @@ RESOURCES += \
     pi.qrc \
     pp.qrc \
     ppp.qrc \
-    op.qrc
+    op.qrc \
+    music.qrc

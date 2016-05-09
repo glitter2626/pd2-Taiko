@@ -8,12 +8,16 @@
 #include <QMessageBox>
 #include <string>
 #include <cstring>
+#include <QMediaPlayer>
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    a = new QMediaPlayer(this);
+    a->setMedia(QUrl("qrc:/Nevereverland.mp3"));
+    a->play();
     ui->label_2->hide();
     ui->label_3->hide();
     ui->label_12->hide();
@@ -67,6 +71,7 @@ void Widget::timerEvent(QTimerEvent *){
                 break;
             case QMessageBox::Cancel:
                 this->close();
+                this->a->stop();
                 break;
             default:
                 break;
@@ -123,9 +128,11 @@ void Widget::keyPressEvent(QKeyEvent *event){
     }*/
 
     QTime t;
-    if(event->key() == Qt::Key_K){
+    if(event->key() == Qt::Key_K ){
+
         if(ui->label_3->x() < 60 && ui->label_3->x() > 10){
             ui->label_3->hide();
+            ui->label_3->move(QPoint(300, ui->label_3->y()));
             ui->label_12->show();
             score = score + 1 + bonus * 1;
             ui->lcdNumber_2->display(score);
@@ -138,6 +145,7 @@ void Widget::keyPressEvent(QKeyEvent *event){
     if(event->key() == Qt::Key_U){
         if(ui->label_2->x() < 60 && ui->label_2->x() > 10){
             ui->label_2->hide();
+            ui->label_2->move(QPoint(300, ui->label_2->y()));
             ui->label_12->show();
             score = score + 1 + bonus * 1;
             ui->lcdNumber_2->display(score);
@@ -185,7 +193,7 @@ void Widget::on_pushButton_clicked()
             while(ui->label_3->x() >=0){
                 ui->label_3->move(QPoint(ui->label_3->x()-x, ui->label_3->y()));
                 t.start();
-                while(t.elapsed()<10)
+                while(t.elapsed()<8)
                     QCoreApplication::processEvents();
             }
             ui->label_3->hide();
@@ -205,7 +213,7 @@ void Widget::on_pushButton_clicked()
             break;
         }
         t.start();
-        while(t.elapsed()<500)
+        while(t.elapsed()<200)
             QCoreApplication::processEvents();
     }
 
@@ -222,6 +230,7 @@ void Widget::on_pushButton_clicked()
 void Widget::on_pushButton_2_clicked()
 {
     this->close();
+    a->stop();
 }
 
 void Widget::on_horizontalSlider_valueChanged(int value)
