@@ -132,7 +132,7 @@ void Widget::keyPressEvent(QKeyEvent *event){
 
         if(ui->label_3->x() < 60 && ui->label_3->x() > 10){
             ui->label_3->hide();
-            ui->label_3->move(QPoint(300, ui->label_3->y()));
+            ui->label_3->move(QPoint(5, ui->label_3->y()));
             ui->label_12->show();
             score = score + 1 + bonus * 1;
             ui->lcdNumber_2->display(score);
@@ -145,7 +145,7 @@ void Widget::keyPressEvent(QKeyEvent *event){
     if(event->key() == Qt::Key_U){
         if(ui->label_2->x() < 60 && ui->label_2->x() > 10){
             ui->label_2->hide();
-            ui->label_2->move(QPoint(300, ui->label_2->y()));
+            ui->label_2->move(QPoint(5, ui->label_2->y()));
             ui->label_12->show();
             score = score + 1 + bonus * 1;
             ui->lcdNumber_2->display(score);
